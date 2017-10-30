@@ -7,7 +7,11 @@ const app = express();
 
 mongoose.promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/noc-log', (err) => {
+//mongoose.connect('mongodb://mamoyko:joelralph021787@ds139585.mlab.com:39585/noc88dblogs');
+
+//mongodb://<dbuser>:<dbpassword>@ds139585.mlab.com:39585/noc88dblogs
+
+mongoose.connect('mongodb://mamoyko:joelralph021787@ds139585.mlab.com:39585/noc88dblogs', (err) => {
   if (err) {
     console.log('cannot connect to the database ' + err);
   } else {

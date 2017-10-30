@@ -20,6 +20,18 @@ router.get('/show_all', (req,res,next) => {
       })
 });
 
+router.get('/show', (req,res,next) => {
+    var reference_id = req.query.reference_id;
+    logModel.find({reference_id : reference_id})
+      .exec()
+      .then((results) => {
+        res.json(results)
+      })
+      .catch((err) => {
+        res.json(err)
+      })
+})
+
 router.post('/add_logs', (req,res,next) => {
     var reference_id = req.body.reference_id,
         client_ip = req.body.client_ip,
